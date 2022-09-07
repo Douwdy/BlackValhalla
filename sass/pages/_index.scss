@@ -1,0 +1,21 @@
+.container{
+    @include flex-center;
+    flex-wrap: wrap;
+    &-character{
+        margin: 25px;
+        &__checkmark{
+            margin-top: -20px;
+            margin-left: 70px;
+            position: absolute;
+            font-size: 1.5em;
+            color: rgb(125, 255, 125);
+            &-none{
+                margin-top: -20px;
+                margin-left: 70px;
+                position: absolute;
+                font-size: 1.5em;
+                color: crimson;
+            }
+        }
+    }
+}
