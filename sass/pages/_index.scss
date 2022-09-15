@@ -17,5 +17,11 @@
                 color: crimson;
             }
         }
+        &__level{
+            position: absolute;
+            margin-top: -25px;
+            margin-left: 30px;
+            font-size: 1em;
+        }
     }
 }
