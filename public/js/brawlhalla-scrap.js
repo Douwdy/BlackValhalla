@@ -18,7 +18,7 @@ fetch(playerData).then(response => {
         console.log(legendName + ": " + legendLevel);
         if (legendLevel >= 25) {
             legendLocation.innerHTML = `
-                <img src="./public/img/legends/Portrait_${legendName}.png" alt="${legendName} frame">
+                <img src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                 <div class="container-character__checkmark">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
@@ -28,7 +28,7 @@ fetch(playerData).then(response => {
                 `;
             } else {
                 legendLocation.innerHTML = `
-                    <img src="./public/img/legends/Portrait_${legendName}.png" alt="${legendName} frame">
+                    <img src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                     <div class="container-character__checkmark-none">
                         <i class="fa-solid fa-circle-xmark"></i>
                     </div>
