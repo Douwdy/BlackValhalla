@@ -52,6 +52,9 @@ header {
   font-size: 1.5em;
   color: crimson;
 }
+.container-character__icon-none {
+  filter: grayscale(100%);
+}
 .container-character__level {
   position: absolute;
   margin-top: -25px;

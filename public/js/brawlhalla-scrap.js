@@ -1,6 +1,7 @@
 // DATA SOURCES
 let playerID = 5466734;
-const apiUrl = `https://brawlhallastats.herokuapp.com/api/submit-form3-by-id?player=${playerID}`;
+let apiKey = "EXAMPLE_API_KEY";
+const apiUrl = `"https://api.brawlhalla.com/player/${playerID}/stats?api_key=${apiKey}`;
 const playerData = "./public/js/player.json";
 // const legendLocation = document.getElementById(`${data.legends.legend_name_key}`);
 let legendsData = [];
@@ -15,10 +16,9 @@ fetch(playerData).then(response => {
         let legendName = legendNameData.replace(/\s+/g, '');
         let legendLevel = legends.level;
         let legendLocation = document.getElementById(`${legendName}`);
-        console.log(legendName + ": " + legendLevel);
         if (legendLevel >= 25) {
             legendLocation.innerHTML = `
-                <img src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
+                <img class="container-character__icon" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                 <div class="container-character__checkmark">
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
@@ -28,7 +28,7 @@ fetch(playerData).then(response => {
                 `;
             } else {
                 legendLocation.innerHTML = `
-                    <img src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
+                    <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                     <div class="container-character__checkmark-none">
                         <i class="fa-solid fa-circle-xmark"></i>
                     </div>

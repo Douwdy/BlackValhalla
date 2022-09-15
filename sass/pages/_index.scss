@@ -17,6 +17,11 @@
                 color: crimson;
             }
         }
+        &__icon{
+            &-none{
+                filter: grayscale(100%);
+            }
+        }
         &__level{
             position: absolute;
             margin-top: -25px;
