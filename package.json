@@ -11,8 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.8",
-    "cheerio": "^1.0.0-rc.12",
-    "node-fetch": "^3.2.10",
     "postcss": "^8.4.16",
     "postcss-cli": "^10.0.0",
     "sass": "^1.54.8"
