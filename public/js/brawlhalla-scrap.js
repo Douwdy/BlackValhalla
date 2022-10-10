@@ -4,7 +4,7 @@ let apiKey = "EXAMPLE_API_KEY";
 // Variables 📈
 let legendsData = [];
 // Data sources 📄
-const apiUrl = `"https://api.brawlhalla.com/player/${playerID}/stats?api_key=${apiKey}`;
+const apiUrl = `https://api.brawlhalla.com/player/${playerID}/stats?api_key=${apiKey}`;
 const playerData = "./public/js/player.json";
 
 // Fetching the playerdata from player.json 🛠️
