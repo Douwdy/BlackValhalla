@@ -30,3 +30,43 @@
         }
     }
 }
+
+.podium{
+    @include flex-center;
+    flex-direction: row;
+    margin: 50px 0px 50px 0px;
+    .top-character{
+        &__icon{
+            @include flex-center;
+        }
+        &__level{
+            position: absolute;
+            margin-top: -18px;
+            margin-left: 30px;
+            font-size: 1em;
+        }
+        &_1{
+            font-size: 1.4em;
+            margin-top: -27px;
+            padding-left: 33px;
+            position: absolute;
+            color: #FFD700;
+        }
+    }
+    #top-1{
+        transform: translateY(-10px);
+        margin: 5px;
+        border-radius: 12px;
+        border: solid #FFD700 2px;
+    }
+    #top-2{
+        margin: 5px;
+        border-radius: 12px;
+        border: solid #A8A9AD 2px;
+    }
+    #top-3{
+        margin: 5px;
+        border-radius: 12px;
+        border: solid #CD7F32 2px;
+    }
+}
