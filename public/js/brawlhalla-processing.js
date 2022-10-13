@@ -1,5 +1,7 @@
 //  Data parameters for fetching data from the server ⚙️
 // const { playerID, apiKey } = require('./api_config.json');
+const playerID = 5466734;
+const apiKey = "EXAMPLE_API_KEY";
 // Variables 📈
 let legendsData = [];
 // Data sources 📄
