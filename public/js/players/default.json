@@ -1,228 +1,228 @@
 {
     "legends": [
         {
-            "legend_name_key": "cross",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "jhala",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "queen nai",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "kor",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "ulgrim",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "bodvar",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "brynn",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "ember",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "ada",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "ragnir",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "orion",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "wu shang",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "koji",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "scarlet",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "barraza",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "gnash",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "nix",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "lord vraxx",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "val",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "diana",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "teros",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "artemis",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "asuri",
+            "legend_name_key": "asdefaulturi",
             "level": "null"
         },
         {
             "legend_id": 15,
-            "legend_name_key": "sentinel",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "thatch",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "cassidy",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "mirage",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "azoth",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "sir roland",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "caspian",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "yumiko",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "lucien",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "hattori",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "sidra",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "xull",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "kaya",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "isaiah",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "jiro",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "lin fei",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "zariel",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "rayman",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "dusk",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "fait",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "thor",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "petra",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "vector",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "volkov",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "onyx",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "jaeyun",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "mako",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "magyar",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "reno",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "munin",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "arcadia",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "ezio",
+            "legend_name_key": "default",
             "level": "null"
         },
         {
-            "legend_name_key": "mordex",
+            "legend_name_key": "default",
             "level": "null"
         }
     ]

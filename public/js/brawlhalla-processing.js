@@ -8,12 +8,61 @@ let playerData = `./public/js/players/${playerID}.json`;
 
 // get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 function getBrawlhallaID() {
+    // load default player data before getting the new player data
+    getPlayerData(playerData);
+    // get the brawlhalla id from the input field
     playerID = document.getElementById("brawlhallaID").value;
     // update the playerData url with the new playerID
     playerData = `./public/js/players/${playerID}.json`;
     // call the getPlayerData function to update the page with the new playerID
     getPlayerData(playerData);
+    getHighestLevel(playerData);
 };
+
+// Display top 3 highest level legends 🏆
+function getHighestLevel() {
+    // get the data from the json file
+    fetch(playerData)
+        .then(response => response.json())
+        .then(data => {
+            // get the legends array from the json file
+            let legends = data["legends"];
+            // sort the legends array by level
+            legends.sort((a, b) => (a.level < b.level) ? 1 : -1);
+            // get the top 3 highest level legends
+            let top3 = legends.slice(0, 3);
+            // get the legend names of the top 3 highest level legends
+            let legendNamesData = top3.map(legend => legend.legend_name_key);
+            // replace spaces in legends name with nothing
+            let legendNames = legendNamesData.map(legend => legend.replace(/\s+/g, ''));
+            // get the legend levels
+            let legendLevels = top3.map(legend => legend.level);
+            // Display the top 3 highest level legends
+            displayHighestLocation = document.getElementById("top-characters");
+
+            displayHighestLocation.innerHTML = `
+            <div class="top-character" id="top-2">
+                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[1]}.webp" alt="${legendNames[1]} frame">
+                <div class="top-character__level">
+                    <h2 style="color: #A8A9AD">${legendLevels[1]}</h2>
+                </div>
+            </div>
+            <div class="top-character" id="top-1">
+                <i class="fa-solid fa-crown top-character_1"></i>
+                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[0]}.webp" alt="${legendNames[0]} frame">
+                <div class="top-character__level">
+                    <h2 style="color: #FFD700">${legendLevels[0]}</h2>
+                </div>
+            </div>
+            <div class="top-character" id="top-3">
+                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[2]}.webp" alt="${legendNames[2]} frame">
+                <div class="top-character__level">
+                    <h2 style="color: #CD7F32">${legendLevels[2]}</h2>
+                </div>
+            </div>
+            `;
+        })
+    }
 
 // Fetching the playerdata from player.json 🛠️
 function getPlayerData(playerData) {
@@ -29,7 +78,7 @@ function getPlayerData(playerData) {
             let legendName = legendNameData.replace(/\s+/g, '');
             let legendLevel = legends.level;
             let legendLocation = document.getElementById(`${legendName}`);
-    
+
             // if function displaying legends if they got 25 levels 🏆
             if (legendLevel >= 25) { // If they have 25 levels it display it as completed ✅
                 legendLocation.innerHTML = `
@@ -51,14 +100,14 @@ function getPlayerData(playerData) {
                             <h2 style="color: crimson">${legendLevel}</h2>
                         </div>
                         `;
-                } else if ( legendLevel === "null") { // Default Data Status ⏹️
+                } else { // Default Data Status ⏹️
                     legendLocation.innerHTML = `
                     <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                     <div class="container-character__checkmark-null">
                         <i class="fa-solid fa-circle-question"></i>
                     </div>
                         `;
-                }
+                };
         }
     }
     ).catch(error => { // Basic error catcher🐛
