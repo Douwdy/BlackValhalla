@@ -2,4 +2,9 @@ header{
     @include flex-center;
     border-bottom: 3px solid white;
     margin-bottom: 20px;
+    h1{
+        font-size: 2em;
+        margin: 0px 0px 0px 0px;
+        padding: 0;
+    }
 }

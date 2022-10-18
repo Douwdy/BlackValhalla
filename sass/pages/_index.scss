@@ -81,13 +81,13 @@
 .searchbar{
     @include flex-center;
     height: 40px;
-
+    background-color: $color-background;
     &-input{
-        height: 30px;
+        height: 35px;
         border-radius: 5px;
     }
     &-submit{
-        border-radius: 5px;
-        height: 30px;
+        height: 35px;
+        border-radius: 10px;
     }
 }

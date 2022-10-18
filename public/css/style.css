@@ -34,6 +34,11 @@ header {
   border-bottom: 3px solid white;
   margin-bottom: 20px;
 }
+header h1 {
+  font-size: 2em;
+  margin: 0px 0px 0px 0px;
+  padding: 0;
+}
 
 /* Index */
 .container {
@@ -123,14 +128,15 @@ header {
   justify-content: center;
   align-items: center;
   height: 40px;
+  background-color: rgb(6, 0, 34);
 }
 .searchbar-input {
-  height: 30px;
+  height: 35px;
   border-radius: 5px;
 }
 .searchbar-submit {
-  border-radius: 5px;
-  height: 30px;
+  height: 35px;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
