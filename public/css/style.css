@@ -59,6 +59,13 @@ header {
   font-size: 1.5em;
   color: crimson;
 }
+.container-character__checkmark-null {
+  margin-top: -20px;
+  margin-left: 70px;
+  position: absolute;
+  font-size: 1.5em;
+  color: orange;
+}
 .container-character__icon-none {
   filter: grayscale(100%);
 }
@@ -109,6 +116,21 @@ header {
   margin: 5px;
   border-radius: 12px;
   border: solid #CD7F32 2px;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+.searchbar-input {
+  height: 30px;
+  border-radius: 5px;
+}
+.searchbar-submit {
+  border-radius: 5px;
+  height: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

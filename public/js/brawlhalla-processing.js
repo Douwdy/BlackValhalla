@@ -1,12 +1,17 @@
 //  Data parameters for fetching data from the server ⚙️
 // const { playerID, apiKey } = require('./api_config.json');
-const playerID = 5466734;
+var playerID = "5466734";
 const apiKey = "EXAMPLE_API_KEY";
 // Variables 📈
 let legendsData = [];
 // Data sources 📄
 const apiUrl = `https://api.brawlhalla.com/player/${playerID}/stats?api_key=${apiKey}`;
-const playerData = "./public/js/player.json";
+const playerData = `./public/js/players/${playerID}.json`;
+
+function updateBrawlhallaID (){
+    playerID = document.getElementById('brawlhallaID').value
+    console.log(playerID);
+}
 
 // Fetching the playerdata from player.json 🛠️
 fetch(playerData).then(response => {
@@ -33,7 +38,14 @@ fetch(playerData).then(response => {
                     <h2 style="color: rgb(125, 255, 125)">${legendLevel}</h2>
                 </div>
                 `;
-            } else { // If they don't have 25 levels it display it as uncompleted 🔴
+            } else if ( legendLevel === "null") { // Default Data Status ⏹️
+                legendLocation.innerHTML = `
+                <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
+                <div class="container-character__checkmark-null">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                    `;
+            } else if ( legendLevel < 25){ // If they don't have 25 levels it display it as uncompleted 🔴
                 legendLocation.innerHTML = `
                     <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                     <div class="container-character__checkmark-none">
@@ -43,7 +55,7 @@ fetch(playerData).then(response => {
                         <h2 style="color: crimson">${legendLevel}</h2>
                     </div>
                     `;
-        }
+            }
     }
 }
 ).catch(error => { // Basic error catcher🐛

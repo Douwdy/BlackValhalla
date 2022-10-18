@@ -16,6 +16,13 @@
                 font-size: 1.5em;
                 color: crimson;
             }
+            &-null{
+                margin-top: -20px;
+                margin-left: 70px;
+                position: absolute;
+                font-size: 1.5em;
+                color: orange;
+            }
         }
         &__icon{
             &-none{
@@ -68,5 +75,19 @@
         margin: 5px;
         border-radius: 12px;
         border: solid #CD7F32 2px;
+    }
+}
+
+.searchbar{
+    @include flex-center;
+    height: 40px;
+
+    &-input{
+        height: 30px;
+        border-radius: 5px;
+    }
+    &-submit{
+        border-radius: 5px;
+        height: 30px;
     }
 }
