@@ -7,7 +7,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(6, 0, 34);
+  background-color: #2b2c34;
 }
 
 /* Typography */
@@ -21,9 +21,10 @@ h1, h2, h3, p, a {
 /* Footer */
 footer {
   margin-top: 20px;
-  border-top: 3px solid white;
+  border-top: 3px solid #fffffe;
   width: 100vw;
   text-align: center;
+  color: #fffffe;
 }
 
 /* Header */
@@ -31,13 +32,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid #2b2c34;
   margin-bottom: 20px;
+  background-color: #fffffe;
 }
-header h1 {
-  font-size: 2em;
-  margin: 0px 0px 0px 0px;
-  padding: 0;
+header img {
+  height: 100px;
 }
 
 /* Index */
@@ -128,16 +128,25 @@ header h1 {
   justify-content: center;
   align-items: center;
   height: 40px;
-  background-color: rgb(6, 0, 34);
+  background-color: #2b2c34;
 }
 .searchbar-input {
+  padding: 10px 10px;
+  margin: 0px 10px 0px 10px;
   height: 35px;
   width: 200px;
   border-radius: 5px;
+  color: #fffffe;
+  background-color: #6246ea;
+  border: none;
 }
 .searchbar-submit {
   height: 35px;
+  width: 35px;
   border-radius: 10px;
+  color: #fffffe;
+  background-color: #6246ea;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

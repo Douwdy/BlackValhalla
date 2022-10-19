@@ -1,10 +1,9 @@
 header{
     @include flex-center;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid $color-headline;
     margin-bottom: 20px;
-    h1{
-        font-size: 2em;
-        margin: 0px 0px 0px 0px;
-        padding: 0;
+    background-color: $color-background;
+    img{
+        height: 100px;
     }
 }
