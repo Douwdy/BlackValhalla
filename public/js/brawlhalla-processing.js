@@ -8,8 +8,6 @@ let playerData = `./public/js/players/${playerID}.json`;
 
 // get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 function getBrawlhallaID() {
-    // load default player data before getting the new player data
-    getPlayerData(playerData);
     // get the brawlhalla id from the input field
     playerID = document.getElementById("brawlhallaID").value;
     // update the playerData url with the new playerID
@@ -17,6 +15,7 @@ function getBrawlhallaID() {
     // call the getPlayerData function to update the page with the new playerID
     getPlayerData(playerData);
     getHighestLevel(playerData);
+    getWinsLossesRatio(playerData);
 };
 
 // Display top 3 highest level legends 🏆
@@ -100,20 +99,28 @@ function getPlayerData(playerData) {
                             <h2 style="color: crimson">${legendLevel}</h2>
                         </div>
                         `;
-                } else { // Default Data Status ⏹️
-                    legendLocation.innerHTML = `
-                    <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
-                    <div class="container-character__checkmark-null">
-                        <i class="fa-solid fa-circle-question"></i>
-                    </div>
-                        `;
                 };
         }
     }
     ).catch(error => { // Basic error catcher🐛
         console.log(error);
     });
-};         
+};
+
+// display wins and losses ratio 📊
+function getWinsLossesRatio() {
+    fetch(playerData).then(response => {
+        return response.json();
+    }).then(data => {
+        let wins = data.wins;
+        let losses = data.games - data.wins;
+        let ratioLocation = document.getElementById("ratio");
+        ratioLocation.innerHTML = `
+        <h2 style="color: green;">${wins} W</h2>
+        <h2 style="color: black;">/</h2>
+        <h2 style="color: crimson;">${losses} L</h2>
+        `;
+    })};
 
 // display the default playerID data on page load
 getBrawlhallaID();

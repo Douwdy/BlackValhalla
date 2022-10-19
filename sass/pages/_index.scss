@@ -37,44 +37,54 @@
         }
     }
 }
-
-.podium{
+.top-data{
     @include flex-center;
-    flex-direction: row;
-    margin: 50px 0px 50px 0px;
-    .top-character{
-        &__icon{
-            @include flex-center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &-podium{
+        @include flex-center;
+        flex-direction: row;
+        margin: 50px 0px 50px 0px;
+        .top-character{
+            &__icon{
+                @include flex-center;
+            }
+            &__level{
+                position: absolute;
+                margin-top: -18px;
+                margin-left: 30px;
+                font-size: 1em;
+            }
+            &_1{
+                font-size: 1.4em;
+                margin-top: -27px;
+                padding-left: 33px;
+                position: absolute;
+                color: #FFD700;
+            }
         }
-        &__level{
-            position: absolute;
-            margin-top: -18px;
-            margin-left: 30px;
-            font-size: 1em;
+        #top-1{
+            transform: translateY(-10px);
+            margin: 5px;
+            border-radius: 12px;
+            border: solid #FFD700 2px;
         }
-        &_1{
-            font-size: 1.4em;
-            margin-top: -27px;
-            padding-left: 33px;
-            position: absolute;
-            color: #FFD700;
+        #top-2{
+            margin: 5px;
+            border-radius: 12px;
+            border: solid #A8A9AD 2px;
+        }
+        #top-3{
+            margin: 5px;
+            border-radius: 12px;
+            border: solid #CD7F32 2px;
         }
     }
-    #top-1{
-        transform: translateY(-10px);
-        margin: 5px;
-        border-radius: 12px;
-        border: solid #FFD700 2px;
-    }
-    #top-2{
-        margin: 5px;
-        border-radius: 12px;
-        border: solid #A8A9AD 2px;
-    }
-    #top-3{
-        margin: 5px;
-        border-radius: 12px;
-        border: solid #CD7F32 2px;
+    &-wins{
+        @include flex-around;
+        padding: 0px 50px 0px 50px;
+        border-radius: 15px;
+        background-color: $color-background;
     }
 }
 
@@ -82,6 +92,7 @@
     @include flex-center;
     height: 40px;
     background-color: $color-headline;
+    margin-top: 20px;
     &-input{
         padding: 10px 10px;
         margin: 0px 10px 0px 10px;

@@ -81,46 +81,61 @@ header img {
   font-size: 1em;
 }
 
-.podium {
+.top-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.top-data-podium {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin: 50px 0px 50px 0px;
 }
-.podium .top-character__icon {
+.top-data-podium .top-character__icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.podium .top-character__level {
+.top-data-podium .top-character__level {
   position: absolute;
   margin-top: -18px;
   margin-left: 30px;
   font-size: 1em;
 }
-.podium .top-character_1 {
+.top-data-podium .top-character_1 {
   font-size: 1.4em;
   margin-top: -27px;
   padding-left: 33px;
   position: absolute;
   color: #FFD700;
 }
-.podium #top-1 {
+.top-data-podium #top-1 {
   transform: translateY(-10px);
   margin: 5px;
   border-radius: 12px;
   border: solid #FFD700 2px;
 }
-.podium #top-2 {
+.top-data-podium #top-2 {
   margin: 5px;
   border-radius: 12px;
   border: solid #A8A9AD 2px;
 }
-.podium #top-3 {
+.top-data-podium #top-3 {
   margin: 5px;
   border-radius: 12px;
   border: solid #CD7F32 2px;
+}
+.top-data-wins {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 50px 0px 50px;
+  border-radius: 15px;
+  background-color: #fffffe;
 }
 
 .searchbar {
@@ -129,6 +144,7 @@ header img {
   align-items: center;
   height: 40px;
   background-color: #2b2c34;
+  margin-top: 20px;
 }
 .searchbar-input {
   padding: 10px 10px;
