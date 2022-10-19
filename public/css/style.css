@@ -22,7 +22,7 @@ h1, h2, h3, p, a {
 footer {
   margin-top: 20px;
   border-top: 3px solid #fffffe;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   color: #fffffe;
 }
