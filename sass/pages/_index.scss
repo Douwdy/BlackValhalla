@@ -38,8 +38,8 @@
     }
 }
 .top-data{
-    @include flex-center;
-    flex-direction: column;
+    @include flex-around;
+    flex-direction: row;
     flex-wrap: wrap;
     &-podium{
         @include flex-center;
@@ -92,7 +92,6 @@
     @include flex-center;
     height: 40px;
     background-color: $color-headline;
-    margin-top: 20px;
     &-input{
         padding: 10px 10px;
         margin: 0px 10px 0px 10px;
