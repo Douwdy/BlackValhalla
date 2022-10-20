@@ -1,3 +1,21 @@
+.spin{
+    @include flex-center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-background;
+    color: $color-button;
+    font-size: 8em;
+    animation: fadein 1s linear both;
+
+    img{
+        height: 150px;
+        animation: spinner 1s linear infinite both;
+    }
+}
+
 .container{
     @include flex-center;
     flex-wrap: wrap;
@@ -86,28 +104,27 @@
         border-radius: 15px;
         background-color: $color-background;
     }
-}
-
-.searchbar{
-    @include flex-center;
-    height: 40px;
-    background-color: $color-headline;
-    &-input{
-        padding: 10px 10px;
-        margin: 0px 10px 0px 10px;
-        height: 35px;
-        width: 200px;
-        border-radius: 5px;
-        color: $color-button-text;
-        background-color: $color-button;
-        border: none;
-    }
-    &-submit{
-        height: 35px;
-        width: 35px;
-        border-radius: 10px;
-        color: $color-button-text;
-        background-color: $color-button;
-        border: none;
+    &-searchbar{
+        @include flex-center;
+        height: 40px;
+        background-color: $color-headline;
+        &-input{
+            padding: 10px 10px;
+            margin: 0px 10px 0px 10px;
+            height: 35px;
+            width: 200px;
+            border-radius: 5px;
+            color: $color-button-text;
+            background-color: $color-button;
+            border: none;
+        }
+        &-submit{
+            height: 35px;
+            width: 35px;
+            border-radius: 10px;
+            color: $color-button-text;
+            background-color: $color-button;
+            border: none;
+        }
     }
 }
