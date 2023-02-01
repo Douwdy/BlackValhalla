@@ -1,31 +1,24 @@
-//  Data parameters for fetching data from the server ⚙️
-// const { playerID, apiKey } = require('./api_config.json');
-let playerID = "default";
-const apiKey = "EXAMPLE_API_KEY";
-// Data sources 📄
-const apiUrl = `https://api.brawlhalla.com/player/${playerID}/stats?api_key=${apiKey}`;
-let playerData = `./public/js/players/${playerID}.json`;
-
-// get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
+// Get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 function getBrawlhallaID() {
     // get the brawlhalla id from the input field
     playerID = document.getElementById("brawlhallaID").value;
     // update the playerData url with the new playerID
-    playerData = `./public/js/players/${playerID}.json`;
+    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=43`;
+    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=43`
     // call the getPlayerData function to update the page with the new playerID
-    getPlayerData(playerData);
-    getHighestLevel(playerData);
-    getWinsLossesRatio(playerData);
+    getPlayerData(legendApiData);
+    getHighestLevel(legendApiData);
+    getWinsLossesRatio(rankedApiData);
 };
 
 // Display top 3 highest level legends 🏆
-function getHighestLevel() {
+function getHighestLevel(legendApiData) {
     // get the data from the json file
-    fetch(playerData)
+    fetch(legendApiData)
         .then(response => response.json())
         .then(data => {
             // get the legends array from the json file
-            let legends = data["legends"];
+            let legends = data;
             // sort the legends array by level
             legends.sort((a, b) => (a.level < b.level) ? 1 : -1);
             // get the top 3 highest level legends
@@ -64,12 +57,12 @@ function getHighestLevel() {
     }
 
 // Fetching the playerdata from player.json 🛠️
-function getPlayerData(playerData) {
-    fetch(playerData).then(response => {
+function getPlayerData(legendApiData) {
+    fetch(legendApiData).then(response => {
         return response.json();
     }).then(data => {
         // Processing data from player.json ⬇️
-        let legendsData = data.legends;
+        let legendsData = data;
         // For loop through all the legends from player.json 🔃
         for (let i = 0; i < legendsData.length; i++) {
             let legends = legendsData[i];
@@ -108,8 +101,8 @@ function getPlayerData(playerData) {
 };
 
 // display wins and losses ratio 📊
-function getWinsLossesRatio() {
-    fetch(playerData).then(response => {
+function getWinsLossesRatio(rankedApiData) {
+    fetch(rankedApiData).then(response => {
         return response.json();
     }).then(data => {
         let wins = data.wins;
