@@ -15,8 +15,13 @@ function getBrawlhallaID() {
 function updateBrawlhallaData() {
     playerID = document.getElementById("brawlhallaID").value;
     updateDataUrl = `https://api.brawlhalla.fr/angularwebapp2/updatep?name=${playerID}`;
+    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=43`;
+    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=43`;
     fetch(updateDataUrl);
-    getBrawlhallaID();
+    // call the getPlayerData function to update the page with the new playerID
+    getPlayerData(legendApiData);
+    getHighestLevel(legendApiData);
+    getWinsLossesRatio(rankedApiData);
 }
 
 // Display top 3 highest level legends 🏆
