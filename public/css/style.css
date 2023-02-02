@@ -192,12 +192,20 @@ header img {
   border: none;
 }
 .top-data-searchbar-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 35px;
   width: 35px;
   border-radius: 10px;
+  font-size: 1.2em;
   color: #fffffe;
   background-color: #6246ea;
   border: none;
+}
+.top-data-searchbar-submit:hover {
+  background-color: #6246ea;
+  filter: hue-rotate(10deg);
 }
 
 /*# sourceMappingURL=style.css.map */

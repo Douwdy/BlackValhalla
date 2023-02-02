@@ -119,12 +119,18 @@
             border: none;
         }
         &-submit{
+            @include flex-center;
             height: 35px;
             width: 35px;
             border-radius: 10px;
+            font-size: 1.2em;
             color: $color-button-text;
             background-color: $color-button;
             border: none;
+            &:hover{
+                background-color: $color-button;
+                filter: hue-rotate(10deg);
+            }
         }
     }
 }
