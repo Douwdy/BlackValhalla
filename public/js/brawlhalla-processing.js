@@ -89,7 +89,7 @@ function getPlayerData(legendApiData) {
                 legendLocation.innerHTML = `
                     <img class="container-character__icon" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                     <div class="container-character__checkmark">
-                        <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-sharp fa-solid fa-hexagon-check"></i>
                     </div>
                     <div class="container-character__level">
                         <h2 style="color: rgb(125, 255, 125)">${legendLevel}</h2>
@@ -99,7 +99,7 @@ function getPlayerData(legendApiData) {
                     legendLocation.innerHTML = `
                         <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                         <div class="container-character__checkmark-none">
-                            <i class="fa-solid fa-circle-xmark"></i>
+                        <i class="fa-sharp fa-solid fa-hexagon-xmark"></i>
                         </div>
                         <div class="container-character__level">
                             <h2 style="color: crimson">${legendLevel}</h2>
