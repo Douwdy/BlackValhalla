@@ -1,10 +1,13 @@
+// Brawlhalla Patch version
+let patchID = 45;
+
 // Get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 function getBrawlhallaID() {
     // get the brawlhalla id from the input field
     playerID = document.getElementById("brawlhallaID").value;
     // update the playerData url with the new playerID
-    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=44`;
-    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=44`;
+    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
+    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
     // call the getPlayerData function to update the page with the new playerID
     getPlayerData(legendApiData);
     getHighestLevel(legendApiData);
@@ -15,8 +18,8 @@ function getBrawlhallaID() {
 function updateBrawlhallaData() {
     playerID = document.getElementById("brawlhallaID").value;
     updateDataUrl = `https://api.brawlhalla.fr/angularwebapp2/updatep?name=${playerID}`;
-    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=44`;
-    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=44`;
+    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
+    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
     fetch(updateDataUrl);
     // call the getPlayerData function to update the page with the new playerID
     getPlayerData(legendApiData);
