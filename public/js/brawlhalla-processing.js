@@ -1,5 +1,5 @@
 // Brawlhalla Patch version
-let patchID = 49;
+let patchID = 51;
 
 // Get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 function getBrawlhallaID() {
