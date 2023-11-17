@@ -109,7 +109,11 @@ header img {
   color: orange;
 }
 .container-character__icon-none {
-  filter: grayscale(100%);
+  filter: grayscale(100%) contrast(45%);
+}
+.container-character__icon-none:hover {
+  transition: all 250ms ease-in-out;
+  filter: grayscale(100%) contrast(100%);
 }
 .container-character__level {
   position: absolute;

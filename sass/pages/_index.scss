@@ -43,8 +43,13 @@
             }
         }
         &__icon{
+            // change the hue of the icon to red and black;
             &-none{
-                filter: grayscale(100%);
+                filter: grayscale(100%) contrast(45%);
+                &:hover{
+                    transition: all 250ms ease-in-out;
+                    filter: grayscale(100%) contrast(100%);
+                }
             }
         }
         &__level{
