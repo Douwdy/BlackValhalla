@@ -178,6 +178,44 @@ header img {
   border-radius: 15px;
   background-color: #fffffe;
 }
+.top-data-patch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px 0px 50px;
+  border-radius: 15px;
+}
+.top-data-patch-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  height: 35px;
+  width: 75px;
+  padding: 0%;
+  font-size: 1em;
+  background-color: #6246ea;
+  color: #fffffe;
+  border-radius: 10px 0px 0px 10px;
+}
+.top-data-patch-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 40px;
+  padding: 0%;
+  border-radius: 0px 10px 10px 0px;
+  text-align: center;
+  font-size: 1.3em;
+  background-color: #6246ea;
+  color: #fffffe;
+  border: none;
+}
+.top-data-patch-input:hover {
+  background-color: #6246ea;
+  filter: hue-rotate(10deg);
+}
 .top-data-searchbar {
   display: flex;
   justify-content: center;

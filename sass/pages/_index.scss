@@ -109,6 +109,39 @@
         border-radius: 15px;
         background-color: $color-background;
     }
+    &-patch{
+        @include flex-center;
+        padding: 0px 50px 0px 50px;
+        border-radius: 15px;
+        &-title{
+            @include flex-center;
+            padding-left: 10px;
+            height: 35px;
+            width: 75px;
+            padding: 0%;
+            font-size: 1em;
+            background-color: $color-button;
+            color: $color-button-text;
+            border-radius: 10px 0px 0px 10px;
+        }
+        &-input{
+            @include flex-center;
+            height: 35px;
+            width: 40px;
+            padding: 0%;
+            border-radius: 0px 10px 10px 0px;
+            text-align: center;
+            font-size: 1.3em;
+            background-color: $color-button;
+            color: $color-button-text;
+            border: none;
+            &:hover{
+                background-color: $color-button;
+                filter: hue-rotate(10deg);
+            }
+        }
+        
+    }
     &-searchbar{
         @include flex-center;
         height: 40px;

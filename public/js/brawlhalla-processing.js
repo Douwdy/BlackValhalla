@@ -1,5 +1,6 @@
 // Brawlhalla Patch version
-let patchID = 55;
+
+let patchID = document.getElementById("patch").value;
 
 // Get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 function getBrawlhallaID() {
@@ -8,14 +9,22 @@ function getBrawlhallaID() {
     // update the playerData url with the new playerID
     legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
     rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
+    // fetch data from local storage if present else fetch data from the api
+    if (localStorage.getItem("legendApiData") !== null) {
+        legendApiData = localStorage.getItem("legendApiData");
+        rankedApiData = localStorage.getItem("rankedApiData");
+    } else {
     // call the getPlayerData function to update the page with the new playerID
     getPlayerData(legendApiData);
     getHighestLevel(legendApiData);
     getWinsLossesRatio(rankedApiData);
-};
+    // saveBrawlhallaData();
+}};
 
 // Update Brawlhalla data 🔄️
 function updateBrawlhallaData() {
+    // get the patch id from the input field
+    patchID = document.getElementById("patch").value;
     playerID = document.getElementById("brawlhallaID").value;
     updateDataUrl = `https://api.brawlhalla.fr/angularwebapp2/updatep?name=${playerID}`;
     legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
@@ -25,7 +34,26 @@ function updateBrawlhallaData() {
     getPlayerData(legendApiData);
     getHighestLevel(legendApiData);
     getWinsLossesRatio(rankedApiData);
+    // saveBrawlhallaData();
 }
+
+// fetch player data using the playerID and save id on the local storage for future use
+// function saveBrawlhallaData() {
+//     playerID = document.getElementById("brawlhallaID").value;
+//     //fetch the data from the api and store it in the localLegendData variable and localRankedData variable
+//     legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
+//     rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
+//     //fetch the data from the api and store it in the localLegendData variable and localRankedData variable
+//     fetch(legendApiData)
+//     .then(response => response.json())
+//     .then(data = localStorage.setItem("localLegendData", data));
+//     //fetch the data from the api and store it in the localLegendData variable and localRankedData variable
+//     fetch(rankedApiData)
+//     .then(response => response.json())
+//     .then(data = localStorage.setItem("localRankedData", data));
+
+//     localStorage.setItem("playerID", playerID);
+// }
 
 // Display top 3 highest level legends 🏆
 function getHighestLevel(legendApiData) {
