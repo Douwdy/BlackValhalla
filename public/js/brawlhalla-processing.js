@@ -57,39 +57,98 @@ function getRank(rankedApiData) {
         rank = rank.replace(/[0-9]/g, '');
         if (rank == "Diamond") {
             rank = "diamond";
-            let rankLocation = document.getElementById("rank");
+            let rankLocation = document.getElementById("progress");
             rankLocation.innerHTML = `
-            <div class="top-data-rank__icon">
-            <i class="fas fa-circle-dot" style="color: #382195"></i>
+            <div class="top-data-progress__bar" id="progress-bar">
+                <div class="top-data-progress__bar__silver" id="silver">
+                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
+                <div class="top-data-progress__bar__gold" id="gold">
+                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #fbd05d;"></div>
+                <div class="top-data-progress__bar__platinum" id="platinum">
+                    <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #005dd1;"></div>
+                <div class="top-data-progress__bar__diamond" id="diamond">
+                    <i class="fas fa-circle-dot" style="color: #382195"></i>
+                </div>
             </div>
-            <h2 class="top-data-rank__title" style="color: #382195">Diamant</h2>
+            <h2 class="top-data-progress__title" style="color: #382195">Diamant</h2>
             `;
         } else if (rank == "Platinum") {
             rank = "platinum";
-            let rankLocation = document.getElementById("rank");
+            let rankLocation = document.getElementById("progress");
             rankLocation.innerHTML = `
-            <div class="top-data-rank__icon">
-            <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+            <div class="top-data-progress" id="progress">
+            <div class="top-data-progress__bar" id="progress-bar">
+                <div class="top-data-progress__bar__silver" id="silver">
+                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
+                <div class="top-data-progress__bar__gold" id="gold">
+                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #fbd05d;"></div>
+                <div class="top-data-progress__bar__platinum" id="platinum">
+                    <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+                <div class="top-data-progress__bar__diamond" id="diamond">
+                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                </div>
             </div>
-            <h2 class="top-data-rank__title" style="color: #005dd1">Platine</h2>
+            <h2 class="top-data-progress__title" style="color: #005dd1">Platine</h2>
             `;
         } else if (rank == "Gold") {
             rank = "gold";
-            let rankLocation = document.getElementById("rank");
+            let rankLocation = document.getElementById("progress");
             rankLocation.innerHTML = `
-            <div class="top-data-rank__icon">
-            <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+            <div class="top-data-progress" id="progress">
+            <div class="top-data-progress__bar" id="progress-bar">
+                <div class="top-data-progress__bar__silver" id="silver">
+                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
+                <div class="top-data-progress__bar__gold" id="gold">
+                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+                <div class="top-data-progress__bar__platinum" id="platinum">
+                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+                <div class="top-data-progress__bar__diamond" id="diamond">
+                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                </div>
             </div>
-            <h2 class="top-data-rank__title" style="color: #fbd05d;">Or</h2>
+            <h2 class="top-data-progress__title" style="color: #fbd05d;">Or</h2>
             `;
         } else if (rank == "Silver") {
             rank = "silver";
-            let rankLocation = document.getElementById("rank");
+            let rankLocation = document.getElementById("progress");
             rankLocation.innerHTML = `
-            <div class="top-data-rank__icon">
-            <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+            <div class="top-data-progress" id="progress">
+            <div class="top-data-progress__bar" id="progress-bar">
+                <div class="top-data-progress__bar__silver" id="silver">
+                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+                <div class="top-data-progress__bar__gold" id="gold">
+                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+                <div class="top-data-progress__bar__platinum" id="platinum">
+                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+                <div class="top-data-progress__bar__diamond" id="diamond">
+                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                </div>
             </div>
-            <h2 class="top-data-rank__title" style="color: #d9d9da">Argent</h2>
+            <h2 class="top-data-progress__title" style="color: #d9d9da">Argent</h2>
             `;
         } else {
             rank = "unranked";

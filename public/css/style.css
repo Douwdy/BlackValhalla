@@ -129,25 +129,35 @@ header img {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.top-data-rank {
+.top-data-progress {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #fffffe;
   border-radius: 15px;
-  width: 130px;
-  height: 90px;
+  width: 330px;
+  height: 70px;
 }
-.top-data-rank__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-}
-.top-data-rank__title {
-  padding: 0px 15px 0px 15px;
+.top-data-progress__title {
+  font-size: 1.2em;
+  padding: 0px 10px 0px 10px;
   margin: 3px;
+}
+.top-data-progress__bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  flex-direction: row;
+}
+.top-data-progress__bar__between {
+  height: 5px;
+  width: 70px;
+  flex-direction: row;
+}
+.top-data-progress__bar i {
+  font-size: 1.5em;
 }
 .top-data-podium {
   display: flex;

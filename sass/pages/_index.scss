@@ -64,22 +64,50 @@
     @include flex-around;
     flex-direction: row;
     flex-wrap: wrap;
-    &-rank{
+    // css for rank progress bar
+    &-progress{
         @include flex-center;
         flex-direction: column;
         background-color: $color-background;
         border-radius: 15px;
-        width: 130px;
-        height: 90px;
-        &__icon{
-            @include flex-center;
-            font-size: 1.5em;
-        }
+        width: 330px;
+        height: 70px;
         &__title{
-            padding: 0px 15px 0px 15px;
+            font-size: 1.2em;
+            padding: 0px 10px 0px 10px;
             margin: 3px;
         }
+        &__bar{
+            &__between{
+                height: 5px;
+                width: 70px;
+                flex-direction: row;
+            }
+            @include flex-around;
+            width: 300px;
+            flex-direction: row;
+            i{
+                    font-size: 1.5em;
+            }
+        }
     }
+    
+    // &-rank{
+    //     @include flex-center;
+    //     flex-direction: column;
+    //     background-color: $color-background;
+    //     border-radius: 15px;
+    //     width: 130px;
+    //     height: 90px;
+    //     &__icon{
+    //         @include flex-center;
+    //         font-size: 1.5em;
+    //     }
+    //     &__title{
+    //         padding: 0px 15px 0px 15px;
+    //         margin: 3px;
+    //     }
+    // }
     &-podium{
         @include flex-center;
         flex-direction: row;

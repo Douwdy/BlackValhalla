@@ -24,7 +24,28 @@
             <h2 style="color: black;">/</h2>
             <h2 style="color: crimson;">???? L</h2>
         </div>
-        <div class="top-data-rank" id="rank"></div>
+        <!-- rank progress bar from silver to diamond -->
+        <div class="top-data-progress" id="progress">
+            <div class="top-data-progress__bar" id="progress-bar">
+                <div class="top-data-progress__bar__silver" id="silver">
+                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
+                <div class="top-data-progress__bar__gold" id="gold">
+                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #fbd05d;"></div>
+                <div class="top-data-progress__bar__platinum" id="platinum">
+                    <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+                </div>
+                <div class="top-data-progress__bar__between" style="background-color: #005dd1;"></div>
+                <div class="top-data-progress__bar__diamond" id="diamond">
+                    <i class="fas fa-circle-dot" style="color: #382195"></i>
+                </div>
+            </div>
+            <h2 class="top-data-progress__title" style="color: #382195">Diamant</h2>
+        </div>
+        <!-- <div class="top-data-rank" id="rank"></div> -->
         <div class="top-data-podium" id="top-characters">
             <div class="top-character" id="top-2">
                 <img class="top-character__icon" src="./public/img/legends/Portrait_default.webp" alt="default frame">
@@ -52,6 +73,7 @@
                 <option value="257670">Boomie</option>
                 <option value="3371988">Lock Robster</option>
                 <option value="5746144">Douwd</option>
+                <option value="2107705">Vocal</option>
             </select>
             <input type="button" value="🔄️" class="top-data-searchbar-submit" onclick="updateBrawlhallaData()">
         </div>
