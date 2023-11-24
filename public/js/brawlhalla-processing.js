@@ -18,7 +18,7 @@ function getBrawlhallaID() {
     getPlayerData(legendApiData);
     getHighestLevel(legendApiData);
     getWinsLossesRatio(rankedApiData);
-    // saveBrawlhallaData();
+    getRank(rankedApiData);
 }};
 
 // Update Brawlhalla data 🔄️
@@ -34,26 +34,66 @@ function updateBrawlhallaData() {
     getPlayerData(legendApiData);
     getHighestLevel(legendApiData);
     getWinsLossesRatio(rankedApiData);
-    // saveBrawlhallaData();
+    getRank(rankedApiData);
 }
 
-// fetch player data using the playerID and save id on the local storage for future use
-// function saveBrawlhallaData() {
-//     playerID = document.getElementById("brawlhallaID").value;
-//     //fetch the data from the api and store it in the localLegendData variable and localRankedData variable
-//     legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
-//     rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
-//     //fetch the data from the api and store it in the localLegendData variable and localRankedData variable
-//     fetch(legendApiData)
-//     .then(response => response.json())
-//     .then(data = localStorage.setItem("localLegendData", data));
-//     //fetch the data from the api and store it in the localLegendData variable and localRankedData variable
-//     fetch(rankedApiData)
-//     .then(response => response.json())
-//     .then(data = localStorage.setItem("localRankedData", data));
-
-//     localStorage.setItem("playerID", playerID);
-// }
+// display the rank of the player 🏆
+function getRank(rankedApiData) {
+    fetch(rankedApiData).then(response => {
+        return response.json();
+    }).then(data => {
+        let rank = data.tier;
+        // remove spaces and numbers from the rank
+        rank = rank.replace(/\s+/g, '');
+        rank = rank.replace(/[0-9]/g, '');
+        console.log(rank);
+        if (rank == "Diamond") {
+            rank = "diamond";
+            let rankLocation = document.getElementById("rank");
+            rankLocation.innerHTML = `
+            <div class="top-data-rank__icon">
+            <i class="fas fa-circle-dot" style="color: #382195"></i>
+            </div>
+            <h2 class="top-data-rank__title" style="color: #382195">Diamant</h2>
+            `;
+        } else if (rank == "Platinum") {
+            rank = "platinum";
+            let rankLocation = document.getElementById("rank");
+            rankLocation.innerHTML = `
+            <div class="top-data-rank__icon">
+            <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+            </div>
+            <h2 class="top-data-rank__title" style="color: #005dd1">Platine</h2>
+            `;
+        } else if (rank == "Gold") {
+            rank = "gold";
+            let rankLocation = document.getElementById("rank");
+            rankLocation.innerHTML = `
+            <div class="top-data-rank__icon">
+            <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+            </div>
+            <h2 class="top-data-rank__title" style="color: #fbd05d;">Or</h2>
+            `;
+        } else if (rank == "Silver") {
+            rank = "silver";
+            let rankLocation = document.getElementById("rank");
+            rankLocation.innerHTML = `
+            <div class="top-data-rank__icon">
+            <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+            </div>
+            <h2 class="top-data-rank__title" style="color: #d9d9da">Argent</h2>
+            `;
+        } else {
+            rank = "unranked";
+            let rankLocation = document.getElementById("rank");
+            rankLocation.innerHTML = `
+            <div class="top-data-rank__icon">
+            <i class="fas fa-circle-dot" style="color: black"></i>
+            </div>
+            <h2 class="top-data-rank__title" style="color: black">UnRanked</h2>
+            `;
+        }
+    })};
 
 // Display top 3 highest level legends 🏆
 function getHighestLevel(legendApiData) {
