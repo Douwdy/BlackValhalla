@@ -1,9 +1,18 @@
-// Brawlhalla Patch version
-
-let patchID = document.getElementById("patch").value;
+// get brawlhalla patch id from the api via https://api.brawlhalla.fr/angularwebapp2/getPatch
+async function getPatchID() {
+    let patchApiData = "https://api.brawlhalla.fr/angularwebapp2/getPatch";
+    // get brawlhalla patch id from the api
+    let response = await fetch(patchApiData);
+    let data = await response.json();
+    // find the patch id in the json file with current value = true
+    let patch = data.find(patch => patch.current === true);
+    // get the patch id from the json file
+    return patch.id;
+};
 
 // Get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
-function getBrawlhallaID() {
+async function getBrawlhallaID() {
+    let patchID = await getPatchID();
     // get the brawlhalla id from the input field
     playerID = document.getElementById("brawlhallaID").value;
     // update the playerData url with the new playerID
@@ -46,7 +55,6 @@ function getRank(rankedApiData) {
         // remove spaces and numbers from the rank
         rank = rank.replace(/\s+/g, '');
         rank = rank.replace(/[0-9]/g, '');
-        console.log(rank);
         if (rank == "Diamond") {
             rank = "diamond";
             let rankLocation = document.getElementById("rank");
