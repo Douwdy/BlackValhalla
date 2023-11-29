@@ -129,6 +129,13 @@ header img {
   flex-direction: row;
   flex-wrap: wrap;
 }
+.top-data__name {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -20px;
+}
 .top-data-progress {
   display: flex;
   justify-content: center;
@@ -139,12 +146,19 @@ header img {
   width: 330px;
   height: 70px;
 }
-.top-data-progress__title {
+.top-data-progress-rank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+.top-data-progress-rank__title {
   font-size: 1.2em;
   padding: 0px 10px 0px 10px;
-  margin: 3px;
+  margin: 0px;
 }
 .top-data-progress__bar {
+  margin: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -217,10 +231,9 @@ header img {
 }
 .top-data-searchbar-input {
   padding: 10px 10px;
-  margin: 0px 10px 0px 10px;
-  height: 35px;
+  margin: 0px 0px 0px 10px;
   width: 200px;
-  border-radius: 5px;
+  border-radius: 10px 0px 0px 10px;
   color: #fffffe;
   background-color: #6246ea;
   border: none;
@@ -231,7 +244,7 @@ header img {
   align-items: center;
   height: 35px;
   width: 35px;
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
   font-size: 1.2em;
   color: #fffffe;
   background-color: #6246ea;

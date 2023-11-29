@@ -10,6 +10,76 @@ async function getPatchID() {
     return patch.id;
 };
 
+function clearAndLoadData() {
+    // Clear all existing data from the page
+    document.getElementById("progress").innerHTML = `
+        <div class="top-data-progress__bar" id="progress-bar">
+        <div class="top-data-progress__bar__silver" id="silver">
+            <i class="fas fa-circle-dot" style="color: #424242"></i>
+        </div>
+        <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+        <div class="top-data-progress__bar__gold" id="gold">
+            <i class="fas fa-circle-dot" style="color: #424242"></i>
+        </div>
+        <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+        <div class="top-data-progress__bar__platinum" id="platinum">
+            <i class="fas fa-circle-dot" style="color: #424242"></i>
+        </div>
+        <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
+        <div class="top-data-progress__bar__diamond" id="diamond">
+            <i class="fas fa-circle-dot" style="color: #424242"></i>
+        </div>
+    </div>
+    <div class="top-data-progress-rank">
+        <h2 class="top-data-progress-rank__title" style="color: #424242">UnRanked</h2>
+    </div>
+    `;
+
+    document.getElementById("top-characters").innerHTML = `
+        <div class="top-character" id="top-2">
+            <img class="top-character__icon" src="./public/img/legends/Portrait_default.webp" alt="default frame">
+            <div class="top-character__level">
+                <h2 style="color: #A8A9AD">??</h2>
+            </div>
+        </div>
+        <div class="top-character" id="top-1">
+            <i class="fa-solid fa-crown top-character_1"></i>
+            <img class="top-character__icon" src="./public/img/legends/Portrait_default.webp" alt="default frame">
+            <div class="top-character__level">
+                <h2 style="color: #FFD700">??</h2>
+            </div>
+        </div>
+        <div class="top-character" id="top-3">
+            <img class="top-character__icon" src="./public/img/legends/Portrait_default.webp" alt="default frame">
+            <div class="top-character__level">
+                <h2 style="color: #CD7F32">??</h2>
+            </div>
+        </div>
+            `;
+    // fetch legend names from the legends.json file
+    fetch("./public/js/legends.json").then(response => {
+        return response.json();
+    }).then(data => {
+        // get the legend names from the json file
+        let legendData = data;
+        // for loop to parse through the legend names
+        for (let i = 0; i < legendData.length; i++) {
+            let legends = legendData[i];
+            let legendName = legends;
+        document.getElementById(`${legendName}`).innerHTML = `
+            <img class="container-character__icon" src="./public/img/legends/Portrait_default.webp" alt="default frame">
+            <div class="container-character__checkmark-none">
+            <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+            </div>
+            <div class="container-character__level">
+                <h2 style="color: crimson">??</h2>
+            </div>
+            `;
+    }});
+    // Call the getBrawlhallaID function to load new data
+    getBrawlhallaID();
+}
+
 // Get brawlhalla id from input field brawlhallaID and update the playerID variable for the json call
 async function getBrawlhallaID() {
     let patchID = await getPatchID();
@@ -18,33 +88,14 @@ async function getBrawlhallaID() {
     // update the playerData url with the new playerID
     legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
     rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
-    // fetch data from local storage if present else fetch data from the api
-    if (localStorage.getItem("legendApiData") !== null) {
-        legendApiData = localStorage.getItem("legendApiData");
-        rankedApiData = localStorage.getItem("rankedApiData");
-    } else {
-    // call the getPlayerData function to update the page with the new playerID
+    // write the new data to the page
+    getPlayerName(patchID);
     getPlayerData(legendApiData);
     getHighestLevel(legendApiData);
     getWinsLossesRatio(rankedApiData);
     getRank(rankedApiData);
-}};
-
-// Update Brawlhalla data 🔄️
-function updateBrawlhallaData() {
-    // get the patch id from the input field
-    patchID = document.getElementById("patch").value;
-    playerID = document.getElementById("brawlhallaID").value;
-    updateDataUrl = `https://api.brawlhalla.fr/angularwebapp2/updatep?name=${playerID}`;
-    legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
-    rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
-    fetch(updateDataUrl);
-    // call the getPlayerData function to update the page with the new playerID
-    getPlayerData(legendApiData);
-    getHighestLevel(legendApiData);
-    getWinsLossesRatio(rankedApiData);
-    getRank(rankedApiData);
-}
+    getPlayerElo(rankedApiData);
+};
 
 // display the rank of the player 🏆
 function getRank(rankedApiData) {
@@ -76,7 +127,10 @@ function getRank(rankedApiData) {
                     <i class="fas fa-circle-dot" style="color: #382195"></i>
                 </div>
             </div>
-            <h2 class="top-data-progress__title" style="color: #382195">Diamant</h2>
+            <div class="top-data-progress-rank">
+                <h2 class="top-data-progress-rank__title" style="color: #382195">Diamant</h2>
+                <h3 id="elo" class="top-data-progress-rank__elo" style="color: #382195"></h3>
+            </div>
             `;
         } else if (rank == "Platinum") {
             rank = "platinum";
@@ -100,7 +154,10 @@ function getRank(rankedApiData) {
                     <i class="fas fa-circle-dot" style="color: #424242"></i>
                 </div>
             </div>
-            <h2 class="top-data-progress__title" style="color: #005dd1">Platine</h2>
+            <div class="top-data-progress-rank">
+                <h2 class="top-data-progress-rank__title" style="color: #005dd1">Platine</h2>
+                <h3 id="elo" class="top-data-progress-rank__title" style="color: #005dd1"></h3>
+            </div>
             `;
         } else if (rank == "Gold") {
             rank = "gold";
@@ -124,7 +181,10 @@ function getRank(rankedApiData) {
                     <i class="fas fa-circle-dot" style="color: #424242"></i>
                 </div>
             </div>
-            <h2 class="top-data-progress__title" style="color: #fbd05d;">Or</h2>
+            <div class="top-data-progress-rank">
+                <h2 class="top-data-progress-rank__title" style="color: #fbd05d;">Or</h2>
+                <h3 id="elo" class="top-data-progress-rank__title" style="color: #fbd05d;"></h3>
+            </div>
             `;
         } else if (rank == "Silver") {
             rank = "silver";
@@ -148,16 +208,10 @@ function getRank(rankedApiData) {
                     <i class="fas fa-circle-dot" style="color: #424242"></i>
                 </div>
             </div>
-            <h2 class="top-data-progress__title" style="color: #d9d9da">Argent</h2>
-            `;
-        } else {
-            rank = "unranked";
-            let rankLocation = document.getElementById("rank");
-            rankLocation.innerHTML = `
-            <div class="top-data-rank__icon">
-            <i class="fas fa-circle-dot" style="color: black"></i>
+            <div class="top-data-progress-rank">
+                <h2 class="top-data-progress-rank__title" style="color: #d9d9da">Argent</h2>
+                <h3 id="elo" class="top-data-progress-rank__title" style="color: #d9d9da"></h3>
             </div>
-            <h2 class="top-data-rank__title" style="color: black">UnRanked</h2>
             `;
         }
     })};
@@ -221,13 +275,12 @@ function getPlayerData(legendApiData) {
             let legendName = legendNameData.replace(/\s+/g, '');
             let legendLevel = legends.level;
             let legendLocation = document.getElementById(`${legendName}`);
-
             // if function displaying legends if they got 25 levels 🏆
             if (legendLevel >= 25) { // If they have 25 levels it display it as completed ✅
                 legendLocation.innerHTML = `
                     <img class="container-character__icon" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                     <div class="container-character__checkmark">
-                    <i class="fa-sharp fa-solid fa-hexagon-check"></i>
+                    <i class="fa-sharp fa-solid fa-circle-check"></i>
                     </div>
                     <div class="container-character__level">
                         <h2 style="color: rgb(125, 255, 125)">${legendLevel}</h2>
@@ -237,19 +290,67 @@ function getPlayerData(legendApiData) {
                     legendLocation.innerHTML = `
                         <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
                         <div class="container-character__checkmark-none">
-                        <i class="fa-sharp fa-solid fa-hexagon-xmark"></i>
+                        <i class="fa-sharp fa-solid fa-circle-xmark"></i>
                         </div>
                         <div class="container-character__level">
                             <h2 style="color: crimson">${legendLevel}</h2>
                         </div>
                         `;
-                };
+                }
         }
     }
     ).catch(error => { // Basic error catcher🐛
         console.log(error);
     });
 };
+
+// Display the player name 🔎
+function getPlayerName(patchID) {
+    getPatchID();
+    let playerName = document.getElementById("brawlhallaID").value;
+    let playerNameLocation = document.getElementById("playerName");
+    fetch(`https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerName}&patch=${patchID}`).then(response => {
+        return response.json();
+    }).then(data => {
+        let playerName = data.name;
+        playerNameLocation.innerHTML = `
+        <h1 class="top-data__name">${playerName}</h1>
+        `;
+    });
+}
+
+// Display the player ELO 📈
+function getPlayerElo(rankedApiData) {
+    fetch(rankedApiData).then(response => {
+        return response.json();
+    }).then(data => {
+        let elo = data.rating;
+        // convert the elo to a string
+        let eloLocation = document.getElementById("elo");
+        // display the elo at eloLocation
+        eloLocation.innerHTML = `
+        Elo: ${elo}
+        `;
+    });
+}
+
+// Check if the brawlhalla id is an alias and if so, replace it with the brawlhalla id 🔄️
+function checkAlias() {
+    let brawlhallaID = document.getElementById("brawlhallaID").value;
+    fetch("./public/js/players.json").then(response => {
+        return response.json();
+    }).then(data => {
+        let players = data;
+        let player = players.find(player => player.alias === brawlhallaID);
+        // if the player is found in the json file, return the brawlhalla id
+        if (player) {
+            document.getElementById("brawlhallaID").value = player.id;
+            clearAndLoadData();
+        } else {
+            clearAndLoadData();
+        }
+    });
+}
 
 // display wins and losses ratio 📊
 function getWinsLossesRatio(rankedApiData) {
@@ -266,5 +367,12 @@ function getWinsLossesRatio(rankedApiData) {
         `;
     })};
 
-// display the default playerID data on page load
-getBrawlhallaID();
+// Enter key listener for the brawlhallaID input field to run the clearAndLoadData function
+document.getElementById("brawlhallaID").addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        clearAndLoadData();
+    }
+});
+
+clearAndLoadData();

@@ -65,6 +65,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     // css for rank progress bar
+    &__name{
+        color: white;
+        @include flex-center;
+        margin-bottom: -20px;
+    }
     &-progress{
         @include flex-center;
         flex-direction: column;
@@ -72,12 +77,17 @@
         border-radius: 15px;
         width: 330px;
         height: 70px;
-        &__title{
-            font-size: 1.2em;
-            padding: 0px 10px 0px 10px;
-            margin: 3px;
+        &-rank{
+            @include flex-center;
+            height: 30px;
+            &__title{
+                font-size: 1.2em;
+                padding: 0px 10px 0px 10px;
+                margin: 0px;
+            }
         }
         &__bar{
+            margin: 0px;
             &__between{
                 height: 5px;
                 width: 70px;
@@ -91,23 +101,7 @@
             }
         }
     }
-    
-    // &-rank{
-    //     @include flex-center;
-    //     flex-direction: column;
-    //     background-color: $color-background;
-    //     border-radius: 15px;
-    //     width: 130px;
-    //     height: 90px;
-    //     &__icon{
-    //         @include flex-center;
-    //         font-size: 1.5em;
-    //     }
-    //     &__title{
-    //         padding: 0px 15px 0px 15px;
-    //         margin: 3px;
-    //     }
-    // }
+
     &-podium{
         @include flex-center;
         flex-direction: row;
@@ -159,10 +153,9 @@
         background-color: $color-headline;
         &-input{
             padding: 10px 10px;
-            margin: 0px 10px 0px 10px;
-            height: 35px;
+            margin: 0px 0px 0px 10px;
             width: 200px;
-            border-radius: 5px;
+            border-radius: 10px 0px 0px 10px;
             color: $color-button-text;
             background-color: $color-button;
             border: none;
@@ -171,7 +164,7 @@
             @include flex-center;
             height: 35px;
             width: 35px;
-            border-radius: 10px;
+            border-radius: 0px 10px 10px 0px;
             font-size: 1.2em;
             color: $color-button-text;
             background-color: $color-button;
