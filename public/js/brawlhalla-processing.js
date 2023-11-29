@@ -88,6 +88,8 @@ async function getBrawlhallaID() {
     // update the playerData url with the new playerID
     legendApiData = `https://api.brawlhalla.fr/angularwebapp2/playerLegends?name=${playerID}&patch=${patchID}`;
     rankedApiData = `https://api.brawlhalla.fr/angularwebapp2/playerMain?name=${playerID}&patch=${patchID}`;
+    updateDataUrl = `https://api.brawlhalla.fr/angularwebapp2/updatep?name=${playerID}`;
+    fetch(updateDataUrl);
     // write the new data to the page
     getPlayerName(patchID);
     getPlayerData(legendApiData);
