@@ -114,19 +114,19 @@ function getRank(rankedApiData) {
             rankLocation.innerHTML = `
             <div class="top-data-progress__bar" id="progress-bar">
                 <div class="top-data-progress__bar__silver" id="silver">
-                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #d9d9da; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
                 <div class="top-data-progress__bar__gold" id="gold">
-                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #fbd05d; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #fbd05d;"></div>
                 <div class="top-data-progress__bar__platinum" id="platinum">
-                    <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #005dd1; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #005dd1;"></div>
                 <div class="top-data-progress__bar__diamond" id="diamond">
-                    <i class="fas fa-circle-dot" style="color: #382195"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #382195; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
             </div>
             <div class="top-data-progress-rank">
@@ -141,19 +141,19 @@ function getRank(rankedApiData) {
             <div class="top-data-progress" id="progress">
             <div class="top-data-progress__bar" id="progress-bar">
                 <div class="top-data-progress__bar__silver" id="silver">
-                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #d9d9da; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
                 <div class="top-data-progress__bar__gold" id="gold">
-                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #fbd05d; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #fbd05d;"></div>
                 <div class="top-data-progress__bar__platinum" id="platinum">
-                    <i class="fas fa-circle-dot" style="color: #005dd1"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #005dd1; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
                 <div class="top-data-progress__bar__diamond" id="diamond">
-                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #424242; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
             </div>
             <div class="top-data-progress-rank">
@@ -168,19 +168,19 @@ function getRank(rankedApiData) {
             <div class="top-data-progress" id="progress">
             <div class="top-data-progress__bar" id="progress-bar">
                 <div class="top-data-progress__bar__silver" id="silver">
-                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #d9d9da; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #d9d9da;"></div>
                 <div class="top-data-progress__bar__gold" id="gold">
-                    <i class="fas fa-circle-dot" style="color: #fbd05d"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #fbd05d; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
                 <div class="top-data-progress__bar__platinum" id="platinum">
-                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #424242; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
                 <div class="top-data-progress__bar__diamond" id="diamond">
-                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #424242; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
             </div>
             <div class="top-data-progress-rank">
@@ -195,19 +195,19 @@ function getRank(rankedApiData) {
             <div class="top-data-progress" id="progress">
             <div class="top-data-progress__bar" id="progress-bar">
                 <div class="top-data-progress__bar__silver" id="silver">
-                    <i class="fas fa-circle-dot" style="color: #d9d9da"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #d9d9da; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
                 <div class="top-data-progress__bar__gold" id="gold">
-                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #424242; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
                 <div class="top-data-progress__bar__platinum" id="platinum">
-                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #424242; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
                 <div class="top-data-progress__bar__between" style="background-color: #424242;"></div>
                 <div class="top-data-progress__bar__diamond" id="diamond">
-                    <i class="fas fa-circle-dot" style="color: #424242"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: #424242; width: 25px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-352a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
                 </div>
             </div>
             <div class="top-data-progress-rank">

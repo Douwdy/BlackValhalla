@@ -170,9 +170,6 @@ header img {
   width: 70px;
   flex-direction: row;
 }
-.top-data-progress__bar i {
-  font-size: 1.5em;
-}
 .top-data-podium {
   display: flex;
   justify-content: center;
