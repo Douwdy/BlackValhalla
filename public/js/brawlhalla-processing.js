@@ -241,20 +241,20 @@ function getHighestLevel(legendApiData) {
 
             displayHighestLocation.innerHTML = `
             <div class="top-character" id="top-2">
-                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[1]}.webp" alt="${legendNames[1]} frame">
+                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[1]}.png" alt="${legendNames[1]} frame">
                 <div class="top-character__level">
                     <h2 style="color: #A8A9AD">${legendLevels[1]}</h2>
                 </div>
             </div>
             <div class="top-character" id="top-1">
                 <i class="fa-solid fa-crown top-character_1"></i>
-                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[0]}.webp" alt="${legendNames[0]} frame">
+                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[0]}.png" alt="${legendNames[0]} frame">
                 <div class="top-character__level">
                     <h2 style="color: #FFD700">${legendLevels[0]}</h2>
                 </div>
             </div>
             <div class="top-character" id="top-3">
-                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[2]}.webp" alt="${legendNames[2]} frame">
+                <img class="top-character__icon" src="./public/img/legends/Portrait_${legendNames[2]}.png" alt="${legendNames[2]} frame">
                 <div class="top-character__level">
                     <h2 style="color: #CD7F32">${legendLevels[2]}</h2>
                 </div>
@@ -280,7 +280,7 @@ function getPlayerData(legendApiData) {
             // if function displaying legends if they got 25 levels 🏆
             if (legendLevel >= 25) { // If they have 25 levels it display it as completed ✅
                 legendLocation.innerHTML = `
-                    <img class="container-character__icon" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
+                    <img class="container-character__icon" src="./public/img/legends/Portrait_${legendName}.png" alt="${legendName} frame">
                     <div class="container-character__checkmark">
                     <i class="fa-sharp fa-solid fa-circle-check"></i>
                     </div>
@@ -290,7 +290,7 @@ function getPlayerData(legendApiData) {
                     `;
                 } else if ( legendLevel < 25){ // If they don't have 25 levels it display it as uncompleted 🔴
                     legendLocation.innerHTML = `
-                        <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.webp" alt="${legendName} frame">
+                        <img class="container-character__icon-none" src="./public/img/legends/Portrait_${legendName}.png" alt="${legendName} frame">
                         <div class="container-character__checkmark-none">
                         <i class="fa-sharp fa-solid fa-circle-xmark"></i>
                         </div>
